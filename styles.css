@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Pixel', sans-serif; /* Use a pixel-style font (You can download one or use web fonts) */
+    font-size: 32px; /* Adjust the font size as needed */
+    letter-spacing: 4px; /* Adjust letter spacing for the pixel art effect */
+    margin-top: 100px; /* Adjust the margin to position the title */
+    text-transform: uppercase; /* Convert text to uppercase for the effect */
+}
+
+.pixel-text {
+    display: inline-block;
+    background-color: black; /* Background color for pixels */
+    color: white; /* Text color */
+    padding: 4px; /* Adjust the padding to create pixel effect */
+    margin: 2px; /* Adjust the margin for spacing between pixels */
+}
+
+.button-container {
+    display:block;
+    padding-bottom: 10%;
+    margin-left: 46%;
+    margin-top: 20px;
+    align-items: center; /* Vertically align containers */
+    top: 0; /* Adjust the top position as needed */
+    right: 0; /* Adjust the right position as needed */
+    position: relative;
+}
+
+#start-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    position: absolute; /* Position the button absolutely within the container */
+    bottom: 0; /* Position the button at the bottom of the container */
+    left: 0; /* Optionally, adjust the left position */
+    right: 0; /* Optionally, adjust the right position */
+    margin-left: -2%;
+    width: 150px;
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2%;
+    align-items: center; /* Vertically align containers */
+    width: 100%;
+  }
+  
+  .game-container {
+    position: relative;
+    width: calc(50% - 150px); /* Adjust width to account for spacing */
+    max-width: 400px;
+    height: 60vh;
+    background-color: #eee;
+    border: 1px solid #333;
+    overflow: hidden; /* This will hide the overflowed content */
+
+  }
+
+.game-container-2 {
+    position: relative;
+    width: calc(50% - 150px); /* Adjust width to account for spacing */
+    max-width: 400px; /* Set a maximum width if desired */
+    height: 60vh;
+    background-color: #eee;
+    border: 1px solid #333;
+    overflow: hidden; /* This will hide the overflowed content */
+
+}
+
+.car {
+    position: relative;
+    left: 50%;
+    top: 85%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 60px;
+    opacity: 1;
+    background-color: #eee;
+}
+
+
+.obstacle {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 20px;
+    background-color: #000;
+}
+
+
+.obstacle-2 {
+    position: absolute;
+    top: 0;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 20px;
+    background-color: #000;
+}
+
+
+.car-2 {
+    position: relative;
+    left: 50%;
+    top: 85%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 60px;
+    opacity: 1;
+    background-color: #eee;
+
+}
+
+
+.obstacle-3 {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 20px;
+    background-color: #000;
+}
+
+
+.obstacle-4 {
+    position: absolute;
+    top: 0;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 20px;
+    background-color: #000;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+
+#score-2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #333;
+}
