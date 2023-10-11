@@ -1,8 +1,4 @@
 # SENG513-A2
-Name: Zhifan Li  
-UCID: 30089428
-
-# Car Dash
 **Author**: Zhifan Li
 **UCID**: 30089428
 
