@@ -141,6 +141,7 @@ function updateGame_2() {
 //     clearInterval(gameInterval); // Stop the game loop
 //     if(isGameOver && isGameOver2){
 //         alert(`Game Over. \nPlayer 1 Score: ${score}+ "\nPlayer 2 Score: "+ ${score2}`);
+//         if player 1 score higher, player 1 wins, else player 2 wins
 //         location.reload(); // Reload the page to restart the game
 //     }
 // }
@@ -152,6 +153,7 @@ function updateGame_2() {
 //     clearInterval(gameInterval2); // Stop the game loop
 //     if(isGameOver && isGameOver2){
 //         alert(`Game Over. \nPlayer 1 Score: ${score}+ "\nPlayer 2 Score: "+ ${score2}`);
+//         if player 1 score higher, player 1 wins, else player 2 wins
 //         location.reload(); // Reload the page to restart the game
 //     }
 // }
