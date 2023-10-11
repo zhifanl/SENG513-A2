@@ -5,79 +5,110 @@ body {
     display: block;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 155vh;
+    padding: 0;
+    font-family: Orbitron, sans-serif;
+    background-image: url('racetrack-background.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    overflow-y: auto;
 }
+
+header {
+    text-align: center;
+    font-family: Orbitron, sans-serif;
+    padding: 5px;
+}
+
+
+header img {
+    max-width: 200px;
+    height: 20vh;
+}
+
 
 .title {
     text-align: center;
-    font-family: 'Pixel', sans-serif; /* Use a pixel-style font (You can download one or use web fonts) */
-    font-size: 32px; /* Adjust the font size as needed */
-    letter-spacing: 4px; /* Adjust letter spacing for the pixel art effect */
-    margin-top: 100px; /* Adjust the margin to position the title */
-    text-transform: uppercase; /* Convert text to uppercase for the effect */
+    font-family: 'Pixel', sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    margin-top: 100px;
+    text-transform: uppercase;
 }
 
 .pixel-text {
     display: inline-block;
-    background-color: black; /* Background color for pixels */
-    color: white; /* Text color */
-    padding: 4px; /* Adjust the padding to create pixel effect */
-    margin: 2px; /* Adjust the margin for spacing between pixels */
+    background-color: black;
+    color: white;
+    padding: 4px;
+    margin: 2px;
 }
 
 .button-container {
-    display:block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-bottom: 10%;
-    margin-left: 46%;
-    margin-top: 20px;
-    align-items: center; /* Vertically align containers */
-    top: 0; /* Adjust the top position as needed */
-    right: 0; /* Adjust the right position as needed */
-    position: relative;
+    margin-top: 10%;
 }
 
 #start-button {
-    background-color: #007bff;
+    background-color: red;
+    font-family: Orbitron, sans-serif;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    position: absolute; /* Position the button absolutely within the container */
-    bottom: 0; /* Position the button at the bottom of the container */
-    left: 0; /* Optionally, adjust the left position */
-    right: 0; /* Optionally, adjust the right position */
-    margin-left: -2%;
+    position: relative;
     width: 150px;
+}
+
+#fire-flame {
+    position: absolute;
+    width: 150px;
+    top: 0%;
+    right: 0;
+    transform: translate(0, -50%);
+    z-index: -1;
+}
+
+#start-button:hover {
+    background-color: #ff3d00;
+    transform: scale(1.05);
+    font-weight: 600;
+    color: #ff3d00;
+    font-weight: bolder;
 }
 
 .container-wrapper {
     display: flex;
     justify-content: space-around;
     margin-top: 2%;
-    align-items: center; /* Vertically align containers */
+    align-items: center;
     width: 100%;
-  }
-  
-  .game-container {
+    margin-bottom: 5%;
+}
+
+.game-container {
     position: relative;
-    width: calc(50% - 150px); /* Adjust width to account for spacing */
+    width: calc(50% - 150px);
     max-width: 400px;
     height: 60vh;
     background-color: #eee;
     border: 1px solid #333;
-    overflow: hidden; /* This will hide the overflowed content */
-
-  }
+    overflow: hidden;
+}
 
 .game-container-2 {
     position: relative;
-    width: calc(50% - 150px); /* Adjust width to account for spacing */
-    max-width: 400px; /* Set a maximum width if desired */
+    width: calc(50% - 150px);
+    max-width: 400px;
     height: 60vh;
     background-color: #eee;
     border: 1px solid #333;
-    overflow: hidden; /* This will hide the overflowed content */
-
+    overflow: hidden;
 }
 
 .car {
@@ -125,7 +156,6 @@ body {
     height: 60px;
     opacity: 1;
     background-color: #eee;
-
 }
 
 
@@ -165,4 +195,11 @@ body {
     right: 10px;
     font-size: 20px;
     color: #333;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
 }
