@@ -1,3 +1,9 @@
+/* Course: SENG 513 */
+/* Date: OCT 29, 2023 */
+/* Assignment 3 */
+/* Name: Zhifan Li */
+/* UCID: 30089428 */
+
 /**
  * Player 1 object representing the first player.
  * @property {string} playerId - The player's ID.
