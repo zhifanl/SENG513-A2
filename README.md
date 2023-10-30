@@ -131,7 +131,7 @@ If a collision is detected, that user’s car will stop moving, the score will s
 
 #### Custom Algorithms
 1. An algorithm to show the users who is the winner by comparing the scores between these two players.
-2. I will implement a simple scoring algorithm that increases the score when a player successfully avoids an obstacle.
+2. A simple scoring algorithm that increases the score when a player successfully avoids an obstacle.
 
 ```
 let score = 0;

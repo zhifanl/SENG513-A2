@@ -25,6 +25,7 @@ const player1 = {
     gameContainer: document.querySelector(".game-container"),
     gameSpeed: 35,
     isGameOver: false,
+    carSpeed: 15
 };
 
 /**
@@ -48,6 +49,7 @@ const player2 = {
     gameContainer: document.querySelector(".game-container-2"),
     gameSpeed: 35,
     isGameOver: false,
+    carSpeed: 15
 };
 
 let gameStarted = false;
@@ -84,6 +86,44 @@ function startGame() {
     }
 }
 
+function increaseSpeed(player) {
+    // Increase the game speed by 10 for 10 seconds
+    player.carSpeed += 50;
+    console.log("Speed increased", player.carSpeed)
+    // Disable the "Speed Up" button and enable the "Speed Down" button
+    document.getElementById(`speed-up-${player.playerId}`).disabled = true;    
+    document.getElementById(`speed-down-${player.playerId}`).disabled = false;
+
+    // Start a countdown timer for using "Speed Up" button again (30 seconds)
+    let countdownSpeedUp = 30;
+    const countdownSpeedUpInterval = setInterval(() => {
+        countdownSpeedUp--;
+        document.getElementById(`speed-up-${player.playerId}`).textContent = `Speed Up (${countdownSpeedUp}s)`;
+        if (countdownSpeedUp <= 0) {
+            clearInterval(countdownSpeedUpInterval);
+            document.getElementById(`speed-up-${player.playerId}`).disabled = false;
+            document.getElementById(`speed-up-${player.playerId}`).textContent = 'Speed Up';
+
+        }
+    }, 1000);
+
+    // Start a countdown timer for increasing the car speed (10 seconds)
+    let countdownSpeed = 10;
+    const countdownSpeedInterval = setInterval(() => {
+        countdownSpeed--;
+        document.getElementById(`speed-down-${player.playerId}`).textContent = `Speed Down (${countdownSpeed}s)`;
+        if (countdownSpeed <= 0) {
+            clearInterval(countdownSpeedInterval);
+
+            // Increase the game speed by 10 after the countdown
+            player.carSpeed -= 50;
+
+            // Reset the "Speed Down" button
+            document.getElementById(`speed-down-${player.playerId}`).disabled = true;
+            document.getElementById(`speed-down-${player.playerId}`).textContent = 'Speed Down';
+        }
+    }, 1000);
+}
 
 /**
  * Handles player movements based on keyboard input.
@@ -96,19 +136,19 @@ function handlePlayerMovement(player, event) {
     // Player 1 movement logic
     if (player.playerId === '1') {
         if ((event.key === "a" || event.key === "A") && parseInt(leftVal) > 0 + 60 / 2) {
-            player.car.style.left = (parseInt(leftVal) - 15) + "px";
+            player.car.style.left = (parseInt(leftVal) - player.carSpeed) + "px";
         }
         if ((event.key === "d" || event.key === "D") && parseInt(leftVal) + player.car.clientWidth < player.gameContainer.clientWidth + 60 / 2) {
-            player.car.style.left = (parseInt(leftVal) + 15) + "px";
+            player.car.style.left = (parseInt(leftVal) + player.carSpeed) + "px";
         }
     }
     // Player 2 movement logic
     if (player.playerId === '2') {
         if ((event.key === "ArrowLeft") && parseInt(leftVal) > 0 + 60 / 2) {
-            player.car.style.left = (parseInt(leftVal) - 15) + "px";
+            player.car.style.left = (parseInt(leftVal) - player.carSpeed) + "px";
         }
         if ((event.key === "ArrowRight") && parseInt(leftVal) + player.car.clientWidth < player.gameContainer.clientWidth + 60 / 2) {
-            player.car.style.left = (parseInt(leftVal) + 15) + "px";
+            player.car.style.left = (parseInt(leftVal) + player.carSpeed) + "px";
         }
     }
 }
@@ -160,15 +200,15 @@ function moveObstacle(player) {
 function checkCollision(player) {
 
     if (player.playerId === '1') {
-        console.log(player.obstacle.style.top)
-        console.log("Car left: ", player.car.style.left)
-        console.log("Car right: ", parseInt(player.car.style.left) + 35)
+        // console.log(player.obstacle.style.top)
+        // console.log("Car left: ", player.car.style.left)
+        // console.log("Car right: ", parseInt(player.car.style.left) + 35)
 
-        console.log("Obstacle 1 left: ", player.obstacle.style.left)
-        console.log("Obstacle 1 right: ", parseInt(player.obstacle.style.left) + 80)
+        // console.log("Obstacle 1 left: ", player.obstacle.style.left)
+        // console.log("Obstacle 1 right: ", parseInt(player.obstacle.style.left) + 80)
 
-        console.log("Obstacle 2 left: ", player.obstacle2.style.left)
-        console.log("Obstacle 2 right: ", parseInt(player.obstacle2.style.left) + 80)
+        // console.log("Obstacle 2 left: ", player.obstacle2.style.left)
+        // console.log("Obstacle 2 right: ", parseInt(player.obstacle2.style.left) + 80)
     }
 
     if (parseInt(player.obstacle.style.top) > 380 && (
@@ -182,15 +222,15 @@ function checkCollision(player) {
             (parseInt(player.car.style.left) - 17.5) < (parseInt(player.obstacle.style.left) + 40))
     )) {
         console.log("O1 caused player to lose")
-        console.log(player.obstacle.style.top)
-        console.log("Car left: ", parseInt(player.car.style.left) - 17.5)
-        console.log("Car right: ", parseInt(player.car.style.left) + 17.5)
+        // console.log(player.obstacle.style.top)
+        // console.log("Car left: ", parseInt(player.car.style.left) - 17.5)
+        // console.log("Car right: ", parseInt(player.car.style.left) + 17.5)
 
-        console.log("Obstacle 1 left: ", parseInt(player.obstacle.style.left) - 40)
-        console.log("Obstacle 1 right: ", parseInt(player.obstacle.style.left) + 40)
+        // console.log("Obstacle 1 left: ", parseInt(player.obstacle.style.left) - 40)
+        // console.log("Obstacle 1 right: ", parseInt(player.obstacle.style.left) + 40)
 
-        console.log("Obstacle 2 left: ", parseInt(player.obstacle2.style.left) - 40)
-        console.log("Obstacle 2 right: ", parseInt(player.obstacle2.style.left) + 40)
+        // console.log("Obstacle 2 left: ", parseInt(player.obstacle2.style.left) - 40)
+        // console.log("Obstacle 2 right: ", parseInt(player.obstacle2.style.left) + 40)
         console.log("Game over.");
         gameOver(player);
     }
@@ -206,15 +246,15 @@ function checkCollision(player) {
             (parseInt(player.car.style.left) - 17.5) < (parseInt(player.obstacle2.style.left) + 40))
     )) {
         console.log("O2 caused player to lose")
-        console.log(player.obstacle2.style.top)
-        console.log("Car left: ", parseInt(player.car.style.left) - 17.5)
-        console.log("Car right: ", parseInt(player.car.style.left) + 17.5)
+        // console.log(player.obstacle2.style.top)
+        // console.log("Car left: ", parseInt(player.car.style.left) - 17.5)
+        // console.log("Car right: ", parseInt(player.car.style.left) + 17.5)
 
-        console.log("Obstacle 1 left: ", parseInt(player.obstacle.style.left) - 40)
-        console.log("Obstacle 1 right: ", parseInt(player.obstacle.style.left) + 40)
+        // console.log("Obstacle 1 left: ", parseInt(player.obstacle.style.left) - 40)
+        // console.log("Obstacle 1 right: ", parseInt(player.obstacle.style.left) + 40)
 
-        console.log("Obstacle 2 left: ", parseInt(player.obstacle2.style.left) - 40)
-        console.log("Obstacle 2 right: ", parseInt(player.obstacle2.style.left) + 40)
+        // console.log("Obstacle 2 left: ", parseInt(player.obstacle2.style.left) - 40)
+        // console.log("Obstacle 2 right: ", parseInt(player.obstacle2.style.left) + 40)
         console.log("Game over.");
         gameOver(player);
     }

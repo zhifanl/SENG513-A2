@@ -11,7 +11,7 @@ body {
     display: block;
     justify-content: center;
     align-items: center;
-    height: 155vh;
+    height: 150vh;
     padding: 0;
     font-family: Orbitron, sans-serif;
     background-image: url('./assets/racetrack-background.avif');
@@ -56,8 +56,8 @@ header img {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 10%;
-    margin-top: 10%;
+    padding-bottom: 5%;
+    margin-top: 5%;
 }
 
 #start-button {
@@ -202,6 +202,82 @@ header img {
     font-size: 20px;
     color: #333;
 }
+
+.button-columns {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.column-1 {
+    position: relative;
+    width: 50%;
+}
+
+.column-2 {
+    position: relative;
+    width: 50%;
+}
+
+#speed-up-1 {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 22%;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#speed-down-1 {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 20%;
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#speed-up-2 {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 22%;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#speed-down-2 {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 20%;
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#speed-up-1:disabled,
+#speed-down-1:disabled {
+    background-color: grey;
+    /* Change the background color to grey when disabled */
+    color: white;
+    padding: 10px 20px;
+}
+
+#speed-up-2:disabled,
+#speed-down-2:disabled {
+    background-color: grey;
+    /* Change the background color to grey when disabled */
+    color: white;
+    padding: 10px 20px;
+}
+
 
 .footer {
     display: flex;

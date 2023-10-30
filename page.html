@@ -6,15 +6,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Titillium+Web:wght@300&display=swap"
+        rel="stylesheet">
     <title>Racing Game</title>
 </head>
+
 <body>
     <header>
         <h1>Car Dash</h1>
@@ -34,17 +37,33 @@
             <div class="obstacle" id="obstacle"></div>
             <div class="obstacle-2" id="obstacle-2"></div>
             <p id="score">Score: 0</p>
+
         </div>
+
         <div class="game-container-2" id="user-2">
             <img src="assets/pixel_racecar_2.png" alt="Player2's Car" class="car-2" id="car-2">
             <div class="obstacle-3" id="obstacle-3"></div>
             <div class="obstacle-4" id="obstacle-4"></div>
             <p id="score-2">Score: 0</p>
+
+        </div>
+
+    </div>
+    <div class="button-columns">
+        <div class="column-1">
+            <button id="speed-up-1" onclick="increaseSpeed(player1)">Speed Up</button>
+            <button id="speed-down-1" disabled>Speed Down</button>
+        </div>
+        <div class="column-2">
+            <button id="speed-up-2" onclick="increaseSpeed(player2)">Speed Up</button>
+            <button id="speed-down-2" disabled>Speed Down</button>
         </div>
     </div>
+
     <div class="footer">
         &copy; 2023 Zhifan Li, UCID: 30089428
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
